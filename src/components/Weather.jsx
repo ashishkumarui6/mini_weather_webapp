@@ -69,7 +69,7 @@ const Weather = () => {
           </div>
         </>
       ) : (
-        "No Data Found"
+        <p className="Status">No Data Found</p>
       )}
     </div>
   );

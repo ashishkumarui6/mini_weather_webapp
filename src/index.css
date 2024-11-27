@@ -5,8 +5,25 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+body{
+  background-color: #e2d4ff;
+}
 .app{
   background-color: #e2d4ff;
   min-height: 100vh;
   display: grid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media screen and (min-width:0px) and (max-width:480px){
+  .app{
+    background-color: #e2d4ff;
+    min-height:50vh;
+    display: grid;
+    margin: 20px;
+  }
+
 }
