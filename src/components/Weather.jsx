@@ -4,6 +4,7 @@ import search_icon from "../assets/search.png";
 import clear_icon from "../assets/clear.png";
 import humidity_icon from "../assets/humidity.png";
 import wind_icon from "../assets/wind.png";
+import Container from "./Conatiner";
 const Weather = () => {
   const [city, SetCity] = useState();
   const [weatherData, setWeatherData] = useState();
@@ -25,53 +26,54 @@ const Weather = () => {
   };
 
   return (
-    <div className="weather">
-      <div className="search-bar">
-        <input
-          onChange={(e) => SetCity(e.target.value)}
-          value={city}
-          type="text"
-          placeholder="Search"
-        />
-        <img src={search_icon} alt="" onClick={OngetSubmit} />
-      </div>
-      {weatherData !== undefined ? (
-        <>
-          <img
-            src={`https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`}
-            alt=""
-            className="weather-icon"
+    <Container>
+      <div className="weather">
+        <div className="search-bar">
+          <input
+            onChange={(e) => SetCity(e.target.value)}
+            value={city}
+            type="text"
+            placeholder="Search"
           />
-          <p className="temperature">
-            {weatherData.main.temp}
-            <h6>
-              <sup>o</sup>
-              <sup className="degree">C</sup>
-            </h6>
-          </p>
+          <img src={search_icon} alt="" onClick={OngetSubmit} />
+        </div>
+        {weatherData !== undefined ? (
+          <>
+            <img
+              src={`https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`}
+              alt=""
+              className="weather-icon"
+            />
+            <p className="temperature">
+              {weatherData.main.temp}
+              <h6>
+                <sup>o</sup>
+                <sup className="degree">C</sup>
+              </h6>
+            </p>
 
-          <p className="location">{weatherData.name}</p>
-          <div className="weather-data">
-            <div className="col">
-              <img src={humidity_icon} alt="" />
-              <div>
-                <p>{weatherData.weather.description}</p>
-                <span>Humidity</span>
+            <p className="location">{weatherData.name}</p>
+            <div className="weather-data">
+              <div className="col">
+                <img src={humidity_icon} alt="" />
+                <div>
+                  <p>{weatherData.weather.description}</p>
+                  <span>Humidity</span>
+                </div>
+              </div>
+              <div className="col">
+                <div>
+                  <p>3.6 Km/H</p>
+                  <span>{weatherData.wind.speed}</span>
+                </div>
               </div>
             </div>
-            <div className="col">
-              <img src={wind_icon} alt="img" />
-              <div>
-                <p>3.6 Km/H</p>
-                <span>{weatherData.wind.speed}</span>
-              </div>
-            </div>
-          </div>
-        </>
-      ) : (
-        <p className="Status">No Data Found</p>
-      )}
-    </div>
+          </>
+        ) : (
+          <p className="Status">No Data Found</p>
+        )}
+      </div>
+    </Container>
   );
 };
 

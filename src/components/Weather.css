@@ -1,5 +1,10 @@
+.container{
+    max-width: 1200px;
+    width: 100%;
+    margin: 100px auto;
+}
+
 .weather{
- 
     place-self: center;
     padding: 20px;
     border-radius: 10px;
@@ -46,6 +51,7 @@
 .location{
     color: #fff;
     font-size: 40px;
+    text-align: center;
 }
 .weather-data{
    width: 100%;
@@ -74,4 +80,94 @@
    margin-right: 60px;
    margin-top: 8px;
     text-align: center;
+}
+
+
+
+@media screen and (min-width:0px) and (max-width:480px){
+
+    .container{
+        max-width: 1200px;
+        width: 100%;
+        margin: 100px auto;
+        background: rgb(24, 128, 10);
+    }
+
+    .weather{
+        width: 90%;
+        padding: 30px 10px 20px 10px;
+    }
+
+    .search-bar{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px; 
+     }
+
+
+     .search-bar input{
+        width: 90%;
+        height: 45px;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        padding-left: 25px;
+        color: #626262;
+        background: #ebfffc;
+        font-size: 18px;
+    }
+    .search-bar img{
+        width: 90%;
+        width: 50px;
+        margin: 0;
+        padding: 15px;
+        border-radius: 50%;
+        background: #ebfffc;
+        cursor: pointer;
+    }
+    .weather-icon{
+        width: 90%;
+        /* margin: 30px 0; */
+    }
+    .temperature{
+        width: 90%;
+        color: #fff;
+        font-size: 40px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .location{
+        width: 90%;
+        color: #fff;
+        font-size: 40px;
+        text-align: center;
+    }
+    .weather-data{
+        width: 90%;
+       color: #fff; 
+       display: flex;
+       justify-content: space-between;
+    }
+    .weather-data .col{
+        /* width: %; */
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 22px;
+    }
+    .weather-data .col span{
+        /* width: 90%; */
+        display: block;
+        font-size: 16px;
+    }
+    .weather-data .col img{
+        width: 90%;
+        margin-top: 10px;
+    }
+
 }
